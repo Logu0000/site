@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trying Tags</title>
+</head>
+<body>
+    <p id="demo">Hello</p>
+    <a href="https://www.google.com">Visit Google</a><br>
+    <abbr title="JavaScript">JS</abbr>
+    <address>NO:10, Gandhi Nagar</address>
+    <audio src=""></audio>
+    <p id="demo1"></p>
+    <button onclick="getLocation()">Get your Location coordinates</button>
+    <input type="text" placeholder="   Search Here..." width="20px" height="100px">
+    <style>
+        input {
+            width: 150px;
+            height: 20px;
+            border-radius: 30px;
+            padding: 20px;
+        }
+    </style>
+    <script>
+        const x = document.getElementById("demo");
+        function getLocation(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(showPosition,showError);
+            }
+            else{
+                x.innerHTML = "It is not supported";
+            }            
+        }
+
+        function showError(error){
+            switch(error.code){
+                case error.PERMISSIONDENIED:
+                    x.innerHTML = "User denied";
+                    break;
+                case error.PERMISSIONACCEPTED:
+                    x.innerHTML = "User accepted";
+                    break;        
+            }    
+        }
+
+        function showPosition(position){
+            x.innerHTML = "latitude"+position.coords.latitude+"longitude"+position.coords.longitude;
+        }
+        document.getElementById("#demo1").innerHTML = "hello1";
+        document.write(try1);
+
+        let text = document.querySelector("demo1");
+        document.write(text);
+        
+        let btn = document.createElement("button");
+        btn.addEventListener('click',() => {
+            alert("Clicked");
+        })
+    </script>
+    <h2>try</h2><br>
+    <button id="button">Click</button>
+</body>
+</html>
